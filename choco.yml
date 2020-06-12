@@ -1,0 +1,6 @@
+- hosts: nara
+  gather_facts: no
+  tasks:
+  - win_chocolatey:
+      name: procexp
+      state: present

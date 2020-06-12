@@ -1,0 +1,10 @@
+- hosts: win
+  gather_facts: no
+  tasks:
+  - name: Instaladores Http
+    win_chocolatey:
+      name: '{{ item }}'
+      state: present
+    loop:
+    - postgresql9
+    

@@ -1,0 +1,11 @@
+---
+- hosts: win
+  gather_facts: no
+  tasks:
+  - win_service:
+      name: WaaSMedicSvc
+      state: stopped
+  
+  - win_service:
+      name: wuauserv
+      state: stopped

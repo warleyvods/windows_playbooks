@@ -1,0 +1,19 @@
+- hosts: win
+  gather_facts: no
+  tasks:
+  - name: Instalando Programas Principais
+    win_chocolatey:
+      name: '{{ item }}'
+      state: present
+    loop:   
+    - googlechrome 
+    - firefox
+    - winscp
+    - notepadplusplus
+    - tomcat
+    - javaruntime
+  - win_service:
+      name: Tomcat9
+      state: started
+      start_mode: auto
+
