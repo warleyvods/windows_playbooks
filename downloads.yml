@@ -1,6 +1,16 @@
-- hosts: win
+---
+- hosts: all
   gather_facts: no
   tasks:
-  - win_chocolatey:
-      name: procexp
-      state: present
+  - name: Criando Pasta Kaizen e Subpastas
+    win_file:
+      path: '{{ item }}'
+      state: directory
+    loop:
+    - "C:\\Warley Ansible"
+    - "C:\\Warley Ansible\\Instaladores"
+    - "C:\\Warley Ansible\\KS-Integration"
+    - "C:\\Warley Ansibles\\KS-Mob"
+    - "C:\\Warley Ansible\\KS-Service"
+    - "C:\\Warley Ansible\\KS-Tools"
+    - "C:\\Warley Ansible\\KS-BD"
