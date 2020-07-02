@@ -1,16 +1,6 @@
----
-- hosts: all
-  gather_facts: no
+  - name: Hello World Sample
+  hosts: all
   tasks:
-  - name: Criando Pasta Kaizen e Subpastas
-    win_file:
-      path: '{{ item }}'
-      state: directory
-    loop:
-    - "C:\\Warley Ansible"
-    - "C:\\Warley Ansible\\Instaladores"
-    - "C:\\Warley Ansible\\KS-Integration"
-    - "C:\\Warley Ansibles\\KS-Mob"
-    - "C:\\Warley Ansible\\KS-Service"
-    - "C:\\Warley Ansible\\KS-Tools"
-    - "C:\\Warley Ansible\\KS-BD"
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
